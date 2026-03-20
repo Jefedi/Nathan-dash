@@ -1,0 +1,7 @@
+node_modules
+.expo
+.git
+dist
+doc
+*.md
+.DS_Store
