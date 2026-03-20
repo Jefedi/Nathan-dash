@@ -1,6 +1,25 @@
 # Déploiement
 
-## Prérequis
+## Installation one-liner
+
+Le repo est **privé** — il faut un token GitHub avec le scope `repo`.
+
+**Créer un token** : https://github.com/settings/tokens/new (cocher `repo`)
+
+```bash
+# Remplacer ghp_XXXX par votre token
+export GH_TOKEN=ghp_XXXX
+curl -fsSL "https://${GH_TOKEN}@raw.githubusercontent.com/Jefedi/Nathan-dash/main/install.sh" | bash
+```
+
+Le script fait **tout automatiquement** :
+1. Installe Git, Docker, Docker Compose si manquants
+2. Clone le repo privé
+3. Build l'image Docker
+4. Lance l'app sur `http://localhost:3000`
+5. Configure l'auto-update (systemd ou cron, toutes les 5 min)
+
+## Prérequis (installés automatiquement par le script)
 
 - Docker (20.10+)
 - Docker Compose (v2+)
