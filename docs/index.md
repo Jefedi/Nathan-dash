@@ -76,8 +76,7 @@ Push sur `main` et ton serveur se met à jour tout seul. Pas besoin de toucher a
 !!! tip "Installation en une commande"
 
     ```bash
-    export GH_TOKEN=ghp_ton_token_ici
-    curl -fsSL "https://${GH_TOKEN}@raw.githubusercontent.com/Jefedi/Nathan-dash/main/install.sh" | bash
+    curl -fsSL https://raw.githubusercontent.com/Jefedi/Nathan-dash/main/install.sh | bash
     ```
 
     :material-arrow-right: [Guide complet d'installation](installation/one-liner.md)

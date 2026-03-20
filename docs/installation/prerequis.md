@@ -106,55 +106,12 @@ sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
 
 ---
 
-## Token GitHub
-
-Le repo Nathan-Dash est **privé**. Tu as besoin d'un **Personal Access Token** GitHub pour y accéder.
-
-### Créer ton token
-
-<div class="steps" markdown>
-
-<div class="step" data-step="1" markdown>
-
-#### Va sur GitHub Settings
-
-Ouvre [github.com/settings/tokens/new](https://github.com/settings/tokens/new)
-
-</div>
-
-<div class="step" data-step="2" markdown>
-
-#### Configure le token
-
-- **Note** : `Nathan-Dash deploy`
-- **Expiration** : 90 jours (ou "No expiration" pour ne pas y retoucher)
-- **Scopes** : coche uniquement **`repo`** (Full control of private repositories)
-
-</div>
-
-<div class="step" data-step="3" markdown>
-
-#### Copie le token
-
-Le token commence par `ghp_`. **Copie-le maintenant**, tu ne pourras plus le voir après !
-
-!!! danger "Garde ton token secret"
-
-    Ne le partage **jamais** et ne le commit **jamais** dans un repo. Il donne accès à tes repos privés.
-
-</div>
-
-</div>
-
----
-
 ## Checklist
 
 - [x] Serveur / VPS / PC avec Linux, macOS ou Windows
 - [ ] Git installé
 - [ ] Docker installé et démarré
 - [ ] Docker Compose disponible
-- [ ] Token GitHub créé et copié
 
 !!! success "Prêt ?"
 

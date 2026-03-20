@@ -2,43 +2,16 @@
 # ============================================================
 # install.sh — Installation 100% automatique de Nathan-Dash
 #
-# Repo PRIVÉ → nécessite un token GitHub (Personal Access Token)
-#
 # Usage (one-liner) :
-#   curl -fsSL "https://<TOKEN>@raw.githubusercontent.com/Jefedi/Nathan-dash/main/install.sh" | GH_TOKEN=<TOKEN> bash
-#
-# Ou en 2 étapes :
-#   export GH_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx
-#   curl -fsSL "https://${GH_TOKEN}@raw.githubusercontent.com/Jefedi/Nathan-dash/main/install.sh" | bash
-#
-# Le token doit avoir le scope "repo" (accès aux repos privés)
-# Créer un token : https://github.com/settings/tokens/new
+#   curl -fsSL https://raw.githubusercontent.com/Jefedi/Nathan-dash/main/install.sh | bash
 # ============================================================
 
 set -euo pipefail
 
 # ---------------------- Config ----------------------
-GH_TOKEN="${GH_TOKEN:-${1:-}}"
 GITHUB_USER="Jefedi"
 GITHUB_REPO="Nathan-dash"
-
-if [ -z "$GH_TOKEN" ]; then
-  echo ""
-  echo -e "\033[0;31m  ERREUR : Token GitHub requis (repo privé)\033[0m"
-  echo ""
-  echo "  Usage :"
-  echo "    export GH_TOKEN=ghp_votre_token_ici"
-  echo "    curl -fsSL \"https://\${GH_TOKEN}@raw.githubusercontent.com/$GITHUB_USER/$GITHUB_REPO/main/install.sh\" | bash"
-  echo ""
-  echo "  Ou directement :"
-  echo "    curl -fsSL \"https://ghp_xxx@raw.githubusercontent.com/$GITHUB_USER/$GITHUB_REPO/main/install.sh\" | GH_TOKEN=ghp_xxx bash"
-  echo ""
-  echo "  Créer un token : https://github.com/settings/tokens/new (scope: repo)"
-  echo ""
-  exit 1
-fi
-
-REPO_URL="https://${GH_TOKEN}@github.com/${GITHUB_USER}/${GITHUB_REPO}.git"
+REPO_URL="https://github.com/${GITHUB_USER}/${GITHUB_REPO}.git"
 INSTALL_DIR="$HOME/Nathan-dash"
 APP_PORT=3000
 BRANCH="main"
@@ -157,7 +130,6 @@ progress "Récupération du projet"
 if [ -d "$INSTALL_DIR/.git" ]; then
   warn "Le projet existe déjà dans $INSTALL_DIR"
   cd "$INSTALL_DIR"
-  # Mettre à jour l'URL remote avec le token
   git remote set-url origin "$REPO_URL"
   git fetch origin "$BRANCH" 2>/dev/null
   git checkout "$BRANCH" 2>/dev/null
@@ -169,10 +141,6 @@ else
   git checkout "$BRANCH" 2>/dev/null || true
   ok "Projet cloné dans $INSTALL_DIR"
 fi
-
-# Sauvegarder le token pour que deploy.sh puisse pull sans intervention
-# Le token est stocké dans l'URL remote du repo local
-ok "Token GitHub enregistré dans le repo local (pour auto-update)"
 
 # ============================================================
 # 3. Build Docker

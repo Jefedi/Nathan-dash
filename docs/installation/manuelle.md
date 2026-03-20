@@ -11,8 +11,7 @@ Ce guide détaille chaque étape pour ceux qui veulent **comprendre et contrôle
 ## 1. Cloner le repo
 
 ```bash
-# Remplace ghp_xxx par ton token GitHub
-git clone https://ghp_xxx@github.com/Jefedi/Nathan-dash.git
+git clone https://github.com/Jefedi/Nathan-dash.git
 cd Nathan-dash
 ```
 

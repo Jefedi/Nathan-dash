@@ -10,16 +10,6 @@ Les questions les plus fréquentes sur Nathan-Dash.
 
 ## Installation
 
-??? question "Le script one-liner échoue avec 'Token GitHub requis'"
-
-    Tu n'as pas défini la variable `GH_TOKEN`. Fais :
-
-    ```bash
-    export GH_TOKEN=ghp_ton_vrai_token
-    ```
-
-    puis relance la commande. [Comment créer un token](installation/prerequis.md#token-github).
-
 ??? question "Docker permission denied / Cannot connect to Docker daemon"
 
     Après l'installation de Docker, il faut ajouter ton utilisateur au groupe `docker` puis se reconnecter :

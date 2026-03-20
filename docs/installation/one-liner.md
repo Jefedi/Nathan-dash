@@ -13,20 +13,11 @@ Git, Docker, clone, build, déploiement et auto-update.
 
 !!! example "Copie et colle cette commande"
 
-    === "Avec export (recommandé)"
+    ```bash
+    curl -fsSL https://raw.githubusercontent.com/Jefedi/Nathan-dash/main/install.sh | bash
+    ```
 
-        ```bash
-        export GH_TOKEN=ghp_ton_token_ici
-        curl -fsSL "https://${GH_TOKEN}@raw.githubusercontent.com/Jefedi/Nathan-dash/main/install.sh" | bash
-        ```
-
-    === "En une seule ligne"
-
-        ```bash
-        curl -fsSL "https://ghp_ton_token_ici@raw.githubusercontent.com/Jefedi/Nathan-dash/main/install.sh" | GH_TOKEN=ghp_ton_token_ici bash
-        ```
-
-    Remplace `ghp_ton_token_ici` par ton [token GitHub](prerequis.md#token-github).
+    C'est tout. Le script fait le reste.
 
 ---
 
@@ -113,16 +104,6 @@ rm -rf ~/Nathan-dash
 ---
 
 ## Dépannage
-
-??? question "Le script échoue avec 'Token GitHub requis'"
-
-    Tu n'as pas défini la variable `GH_TOKEN`. Assure-toi de :
-
-    ```bash
-    export GH_TOKEN=ghp_ton_vrai_token
-    ```
-
-    avant de lancer la commande.
 
 ??? question "Docker permission denied"
 

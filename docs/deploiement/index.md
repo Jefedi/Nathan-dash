@@ -13,7 +13,7 @@ Nathan-Dash est conçu pour être déployé facilement et se maintenir tout seul
 ```mermaid
 graph TB
     subgraph "GitHub"
-        A[Repo privé<br>branche main]
+        A[Repo GitHub<br>branche main]
     end
 
     subgraph "Ton serveur"
