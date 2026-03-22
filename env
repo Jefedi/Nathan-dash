@@ -1,0 +1,9 @@
+# ⚠️ NE JAMAIS PARTAGER CE FICHIER
+# Remplacez VOTRE_TOKEN_ICI par votre nouveau token après Reset Token
+
+DISCORD_TOKEN=VOTRE_TOKEN_ICI
+PREFIX=!
+BOT_NAME=nathanfr3
+
+# Claude AI (optionnel pour l'instant)
+CLAUDE_API_KEY=VOTRE_CLE_CLAUDE_ICI
